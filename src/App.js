@@ -69,11 +69,13 @@ function App() {
           placeholder="Search"
           aria-label="Search"
           value={search}
-          // onChange={handleSearchChange}
-          onChange={(e) => {
-            setSearch(e.target.value);
-            fetchSuggestion(search);
-          }}
+          //with debounce delay
+          onChange={handleSearchChange}
+          //without debounce delay directly calling fetch API onChange event trigger
+          // onChange={(e) => {
+          //   setSearch(e.target.value);
+          //   fetchSuggestion(search);
+          // }}
         />
 
         {/* Suggestion List */}
